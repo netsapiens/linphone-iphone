@@ -1019,11 +1019,11 @@ typedef struct message_header_list {
 
  */
 static message_header_list_t mandatory_headers[] = {
-		{"REGISTER",{"Call-ID","CSeq","From", "Max-Forwards","To","Via",NULL}},
-		{"INVITE",{"Contact","Call-ID","CSeq","From", "Max-Forwards","To","Via",NULL}},
-		{"CANCEL",{"Call-ID","CSeq","From", "Max-Forwards","To","Via",NULL}},
-		{"BYE",{"Call-ID","CSeq","From", "Max-Forwards","To","Via",NULL}},
-		{"ACK",{"Call-ID","CSeq","From", "Max-Forwards","To","Via",NULL}},
+		{"REGISTER",{"Call-ID","CSeq","From","To","Via",NULL}},
+		{"INVITE",{"Contact","Call-ID","CSeq","From","To","Via",NULL}},
+		{"CANCEL",{"Call-ID","CSeq","From","To","Via",NULL}},
+		{"BYE",{"Call-ID","CSeq","From","To","Via",NULL}},
+		{"ACK",{"Call-ID","CSeq","From","To","Via",NULL}},
 		{"*", { "To", "From", "CSeq", "Via", NULL}}, /* catch-all, these fields are required all the time. */
 		{NULL,{NULL}}
 };
