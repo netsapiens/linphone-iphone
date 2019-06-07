@@ -10,6 +10,14 @@ Group changes to describe their impact on the project, as follows:
     Fixed for any bug fixes.
     Security to invite users to upgrade in case of vulnerabilities.
 
+## [Netsapiens-2.0.2] - 2019-06-07
+
+### Changed
+- UserAgent formating String (linphone/coreapi/linphonecore.c:2925)
+- Belle-Sip Grammar to include underscore (belle-sip/src/grammars/belle_sip_message.g)
+- Removed Max-Forwards from mandatory_headers (belle-sip/src/messages.c:1021)
+
+
 ## [4.0.2] - 2018-10-15
 
 ### Fixed
