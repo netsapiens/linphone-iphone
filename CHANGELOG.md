@@ -16,6 +16,12 @@ Group changes to describe their impact on the project, as follows:
 - UserAgent formating String (linphone/coreapi/linphonecore.c:2925)
 - Belle-Sip Grammar to include underscore (belle-sip/src/grammars/belle_sip_message.g)
 - Removed Max-Forwards from mandatory_headers (belle-sip/src/messages.c:1021)
+- Removed Submodule references to belle-sip & linphone
+        git rm --cached submodule_path      # delete reference to submodule HEAD (no trailing slash)
+        removed submodule from .gitmodules  # if you have more than one submodules,
+        rm -rf submodule_path/.git          # make sure you have backup!!
+        git add submodule_path              # will add files instead of commit reference
+        git commit -m "remove submodule"
 
 
 ## [4.0.2] - 2018-10-15
