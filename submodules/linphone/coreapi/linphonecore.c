@@ -2924,10 +2924,9 @@ static char _ua_version[64]=LIBLINPHONE_VERSION;
 
 void linphone_core_set_user_agent(LinphoneCore *lc, const char *name, const char *ver){
 	char ua_string[256];
-	snprintf(ua_string, sizeof(ua_string) - 1, "%s/%s", name?name:"", ver?ver:"");
+	snprintf(ua_string, sizeof(ua_string) - 1, "%s %s", name?name:"", ver?ver:"");
 	if (lc->sal) {
 		lc->sal->setUserAgent(ua_string);
-		lc->sal->appendStackStringToUserAgent();
 	}
 }
 const char *linphone_core_get_user_agent(LinphoneCore *lc){
