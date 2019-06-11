@@ -761,7 +761,7 @@ addr_spec_with_generic_uri[belle_sip_header_address_t* object]
 					 &&  strcasecmp(belle_generic_uri_get_scheme($generic_uri.ret),"sips") != 0 ) {
 						 belle_sip_header_address_set_absolute_uri(object,$generic_uri.ret);
 					 } else {
-						 belle_sip_message("Cannot parse a sip/sips uri as a generic uri");
+						 belle_sip_message("Cannot fast parse a sip/sips uri as a generic uri");
 						 belle_sip_object_unref($generic_uri.ret);
 					 }}
   	) lws?;
@@ -1865,7 +1865,9 @@ scope { const char* current; }
             :   (hostname {$host::current=(const char *)$hostname.text->chars;}
                     | ipv4address {$host::current=(const char *)$ipv4address.text->chars;}
                     | ipv6reference {$host::current=(const char *)$ipv6reference.ret;}) {$ret=$host::current;};
-hostname        :   ( domainlabel DOT )* (toplabel)=>toplabel DOT? ;
+
+
+hostname        :   ( domainlabel DOT )* (toplabel)=>toplabel DOT? | DIGIT+;
 
 domainlabel     :   alphanum | (alphanum ( alphanum | DASH | USCORE)* alphanum) ;
 toplabel        :   alpha | (alpha ( ( DASH | USCORE )?  alphanum)+) ;
