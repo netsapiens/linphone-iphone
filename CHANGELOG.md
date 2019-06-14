@@ -10,6 +10,9 @@ Group changes to describe their impact on the project, as follows:
     Fixed for any bug fixes.
     Security to invite users to upgrade in case of vulnerabilities.
 
+## [Netsapiens-2.0.3] - 2019-06-13
+-Belle-Sip Grammar to allow Digit+ (belle-sip/src/grammars/belle_sip_message.g:1870)
+
 ## [Netsapiens-2.0.2] - 2019-06-07
 
 ### Changed
@@ -22,7 +25,6 @@ Group changes to describe their impact on the project, as follows:
         rm -rf submodule_path/.git          # make sure you have backup!!
         git add submodule_path              # will add files instead of commit reference
         git commit -m "remove submodule"
-
 
 ## [4.0.2] - 2018-10-15
 
